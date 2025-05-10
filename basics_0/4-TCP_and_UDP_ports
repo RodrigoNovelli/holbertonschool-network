@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Script para mostrar puertos de red
- 
-netstat -l -p
+netstat -lp
