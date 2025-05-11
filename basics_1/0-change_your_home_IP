@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
+# Backup of the file
 sudo cp /etc/hosts /etc/hosts.bak
+# Deletes any entry containing local host
 sudo sed -i '/localhost/d' /etc/hosts
+# Adds a bew entry with the ip
 echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
+# Deletes any entry of facebook
 sudo sed -i '/facebook.com/d' /etc/hosts
+# Adds a bew ebtry fir facebook with the ip
 echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
+# Prints a message in terminal
 echo "Updated /etc/hosts:"
+# Displays the updated contents
 cat /etc/hosts
